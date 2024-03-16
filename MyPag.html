@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTAFOLIO</title>
+    <style>
+        *{
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: black; /* Fondo negro */
+            color: white; /* Color de texto blanco */
+        }
+        :root{
+            --color-primario: #fffcf9;
+            --color-secundario: #3772ff;
+            
+        }
+       
+
+        .logo{
+            font-size: 2.3em;
+            color: var(--color-primario);
+            cursor:pointer;
+        }
+        .logo span{
+            color: var(--color-secundario)   
+        }
+        .navegacion a{
+            font-size: 1.2em;
+            color: var(--color-primario);
+            text-decoration: none;
+            margin-right: 40px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .navegacion a:hover{
+            color: var(--color-secundario);
+        }
+        .btn-hablar{
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 35px;
+            background-color: var(--color-secundario);
+            border-radius: 10px;
+            border: 2px solid var(--color-secundario);
+            font-weight: 600;
+            transition: .3s;
+
+
+        }
+        .btn-hablar:hover{
+            color: var(--color-secundario);
+            background: transparent;
+        }
+        .inicio{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url(maris.jpg);
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 30px 100px;
+        }
+        .contenido{
+            max-width: 500px;
+            color: var(--color-primario);
+        }
+        .contenido h2 {
+            font-size: 3em;
+        }
+
+        .contenido h2 span{
+            color: var(--color-secundario);
+        }
+        .contenido h4{
+            font-size: 2em;
+        }
+        .contenido p{
+            padding: 10px 0 40px 0;
+            display: flex; /* Para que los elementos se alineen horizontalmente */
+            align-items: center; /* Para alinear verticalmente los elementos */
+        }
+        .contenido img {
+            margin-right: 15px; /* Espacio entre la imagen y el texto */
+            max-width: 100px; /* Ancho máximo de la imagen */
+            height: auto; /* Altura automática para mantener la proporción */
+        }
+        .btn-grupo a{
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 40px;
+            background: var(--color-secundario);
+            border-radius: 10px;
+            border: 2px solid var(--color-secundario);
+            font-weight: 600;
+            transition: .3s;
+        }
+        .btn-grupo a:hover:nth-child(1){
+            background-color: transparent;
+            color: var(--color-secundario);
+        }
+        .btn-grupo a:nth-child(2){
+            color: var(--color-secundario);
+            background: transparent;
+            margin-left: 30px;
+            padding: 10px 30px;
+        }
+        .btn-grupo a:hover:nth-child(2){
+            background-color: var(--color-secundario);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+   
+    <section class="inicio">
+        <div class="contenido">
+            <h2>Holis, Soy <span>Mariana Yuneiri</span></h2>
+            <h4>i'm Biker lover </h4>
+            <p >
+                <img src="yo1.jpeg" alt="Imagen de perfil"> <!-- Aquí colocarías la ruta de tu imagen -->
+                Naci en Lazaro Cardenas michoacan el 17 de febrero del 2005, actualmente tengo 19 años y soy estudiante universitario, cursando la carrera de ing.software.
+            </p>
+            
+
+            <div class="btn-grupo">
+                <a href="#">Contactame</a>
+                <a href="#">Proyectos</a>
+            </div>
+
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Obtener el enlace "Proyectos"
+                var enlaceProyectos = document.querySelector('.btn-grupo a:nth-child(2)');
+        
+                // Agregar un event listener para el clic en el enlace "Proyectos"
+                enlaceProyectos.addEventListener('click', function(evento) {
+                    evento.preventDefault(); // Prevenir el comportamiento predeterminado (por ejemplo, seguir el enlace)
+        
+                    // Redirigir a tu perfil de GitHub
+                    window.location.href = 'https://github.com/yunemaru';
+                });
+    
+                // Obtener el enlace "Contactame"
+                var enlaceContactame = document.querySelector('.btn-grupo a:nth-child(1)');
+                // Crear un elemento para mostrar la información de contacto
+                var infoContacto = document.createElement('div');
+                infoContacto.style.marginTop = '15px'; // Espaciado superior
+    
+                // Definir la información de contacto
+                var contactoHTML = `
+                    <p>Correo electrónico: <a href="mailto:yunmecb@gmail.com">yunmecb@gmail.com</a></p>
+                    <p>Teléfono: <a href="tel:+17531576886">7531576886</a></p>
+                    <p>Instagram: <a href="https://www.instagram.com/yun__cb/">@yun__cb</a></p>
+                `;
+    
+                // Agregar la información de contacto al elemento creado
+                infoContacto.innerHTML = contactoHTML;
+    
+                // Agregar un event listener para el clic en el enlace "Contactame"
+                enlaceContactame.addEventListener('click', function(evento) {
+                    evento.preventDefault(); // Prevenir el comportamiento predeterminado (por ejemplo, seguir el enlace)
+        
+                    // Insertar la información de contacto debajo del enlace "Contactame"
+                    enlaceContactame.insertAdjacentElement('afterend', infoContacto);
+                });
+            });
+        </script>
+    </section>
+</body>
+</html>
